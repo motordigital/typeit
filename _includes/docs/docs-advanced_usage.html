@@ -1,0 +1,62 @@
+<section class="Section--advanced_usage" id="advancedUsage">
+	<h3>Advanced Usage</h3>
+
+	<p>To control your typing down to the smallest character, there are five companion functions available. Simply chain them together following a typeIt() call on an element, and your chain will execute.</p>
+
+	<p>Note that when using these functions, the <span class="code inline">strings</span> option should not defined.</p>
+
+	<span class="code">
+		$('.type-it').typeIt({<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed: 900,<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lifeLike: false,<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;autoStart: false<br>
+		})<br>
+		.tiType('I am typing slowly,')<br>
+		.tiSettings({speed: 100})<br>
+		.tiType('but now I am typing pretty fasst')<br>
+		.tiDelete(2)<br>
+		.tiType('t!');
+	</span>
+
+	<h4>Companion Functions</h4>
+	<table>
+
+        <tr>
+          <th>Function</th>
+          <th>Arguments</th>
+          <th>Description</th>
+        </tr>
+
+        <tr>
+          <td>tiType()</td>
+          <td>(string)</td>
+          <td>Will type the characters.</td>
+        </tr>
+
+        <tr>
+          <td>tiDelete()</td>
+          <td>(number)</td>
+          <td>Will delete the number of characters/entities entered.</td>
+        </tr>
+
+        <tr>
+          <td>tiPause()</td>
+          <td>(number)</td>
+          <td>Will pause the specified number of milliseconds.</td>
+        </tr>
+
+        <tr>
+          <td>tiBreak()</td>
+          <td>(none)</td>
+          <td>Will break the typing to a new line.</td>
+        </tr>
+
+        <tr>
+          <td>tiSettings()</td>
+          <td>(JSON)</td>
+          <td>Will redefine your options on the fly. This will only work for updating the <em>speed</em>, <em>lifeLike</em>, and <em>html</em> options.</td>
+        </tr>
+
+  	</table>
+
+</section>

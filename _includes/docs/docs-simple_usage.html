@@ -1,0 +1,50 @@
+<section class="Section--simple_usage" id="simpleUsage">
+	<h3>Simple Usage</h3>
+	<p>In it's simplest use, just call typeIt() on any element and include your <a href="#options">options</a>.</p>
+
+	<span class="code">
+		$('.type-it').typeIt({<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strings: ['This is my string!']<br>
+		});
+	</span>
+
+	<h4>About Defining Your Strings</h4>
+
+	<h5>Via JSON</h5>
+	<p>Define your string(s) by using the <span class="code inline">strings</span> option.
+		
+	<span class="code">strings: 'Here is my string!'</span>
+
+	<h5 id="htmlDefinition">Directly in the HTML</h5>
+	<p>As a fallback for users without JavaScript, you may define strings in your HTML element. However, <strong>this will override any strings you've defined via JSON.</strong></p>
+	<span class="code">
+		&lt;span class=&quot;type-it&quot;&gt;Here is a string.&lt;/span&gt;
+	</span>
+
+	<h4>Typing Multiple Strings</h4>
+	<p>You cou can also configure TypeIt to type multiple strings in a single call.</p>
+
+	<p>If you define your strings within your HTML element, just separate them with &lt;br&gt; tags:</p>
+
+	<span class="code">
+		 &lt;span class="type-it"&gt;Here is a string. &lt;br&gt;And here is another!&lt;/span&gt; 
+	</span>
+
+	<p>If they're defined via JSON, it's possible to put them inside quotation marks separated by &lt;br&gt; tags, but it's recommended that you use an array.</p>
+
+	<span class="code">
+		$('.type-it').typeIt({<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strings: ['Enter your string here!', 'Another string!']<br>
+		});
+	</span>
+
+	<p>By default, multiple strings will break lines (breakLines: true). However, you can also set them to delete and replace each other.</p>
+
+	<span class="code">
+		$('.type-it').typeIt({<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strings: ['Enter your string here!', 'Another string!'],<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;breakLines: false<br>
+		});
+	</span>
+
+</section>

@@ -1,0 +1,31 @@
+<section class="Section--html" id="html">
+	<h3>About HTML Handling</h3>
+	<p>TypeIt is fully prepared to handle HTML in your strings.</p>
+
+	<h4>HTML Elements</h4>
+	<p>Tags must be one level deep and be <span class="code inline">inline</span> elements.</p>
+
+	<span class="code">
+		// GOOD! :)
+		$('.typeit-box').typeIt({<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strings: '&lt;h1 class="your-class"&gt;This is a string!&lt;/h1&gt;',
+		}
+	</span>
+
+	<span class="code">
+		// BAD! :(
+		$('.typeit-box').typeIt({<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strings: '&lt;h1 class="your-class">&lt;span&gt;This is a string!&lt;/span&gt;&lt;/h1&gt;',
+		}
+	</span>
+
+	<h4>HTML Entities</h4>
+	<p>ASCII HTML entities must begin with <span class="code inline">&amp;</span> and end with <span class="code inline">;</span>.</p> 
+
+	<span class="code">
+		$('.typeit-box').typeIt({<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strings: '&lt;h1 class="your-class"&gt;I really &amp;hearts; Life cereal.&lt;h1&gt;',
+		}
+	</span>
+
+</section>

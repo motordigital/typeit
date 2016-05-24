@@ -1,0 +1,91 @@
+footer {
+  background: black;
+  padding: 2rem;
+}
+
+.connect-list {
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  * {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.connect-item {
+  display: inline-block;
+  padding: 0 1rem;
+  position: relative;
+
+  a {
+    display: block;
+  }
+
+  &:hover {
+    svg, path {
+      fill: $pink;
+    }
+  }
+
+  i {
+    color: white;
+    font-size: 3rem;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+
+  svg {
+    fill: white;
+    width: 25px;
+  }
+
+  path {
+    fill: white;
+  }
+}
+
+.Copyright {
+  opacity: .25;
+  display: block;
+  color: white;
+  font-weight: 100;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+}
+
+.PreFooter {
+  border-top: 2px solid $light-gray;
+  margin-top: 3rem;
+
+  ul {
+    margin-top: .5rem;
+    list-style: none; 
+    padding: 0;
+    
+    li {
+      width: auto;
+      display: inline-block;
+      margin: 0;
+
+      & + li {
+        margin-left: 2rem;
+      }
+
+      &:before {
+        content: '';
+      }
+    }
+  }
+}

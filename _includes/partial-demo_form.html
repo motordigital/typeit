@@ -1,0 +1,91 @@
+  <form id="TIInput">
+
+    <h2 class="ti-header">Try It!</h2>
+    <p class="description">Tweak the settings, enter at least one string, and watch it go!</p>
+
+    <div class="options-holder">
+
+      <div class="ti-option-box">
+        <label>Type Speed</labeL>
+        <input class="ti-option" type="number" id="iSpeed" placeholder="speed">
+      </div>
+
+      <div class="ti-option-box">
+        <label>HTML</labeL>
+        <select class="ti-option" id="iHTML">
+          <option value="true" selected>True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+
+      <div class="ti-option-box">
+        <label>Life-Like</labeL>
+        <select class="ti-option" id="iLifeLike">
+          <option value="true" selected>True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+
+      <div class="ti-option-box">
+        <label>Show Cursor</labeL>
+        <select class="ti-option" id="iCursor">
+          <option value="true" selected>True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+
+      <div class="ti-option-box">
+        <label>Cursor Speed</labeL>
+        <input class="ti-option" type="number" id="iCursorSpeed" placeholder="cursorSpeed">
+      </div>
+
+      <div class="ti-option-box">
+        <label>Break Lines</labeL>
+        <select class="ti-option" id="iBreakLines">
+          <option value="true" selected>True</option>
+          <option value="false">False</option>
+        </select>
+      </div>
+
+      <div class="ti-option-box">
+        <label>Break Delay</labeL>
+        <input class="ti-option" type="number" id="iBreakDelay" placeholder="breakDelay">
+      </div>
+
+      <div class="ti-option-box">
+        <label>Start Delay</labeL>
+        <input class="ti-option" type="number" id="iStartDelay" placeholder="startDelay">
+      </div>
+
+      <div class="ti-option-box">
+        <label>Loop</labeL>
+        <select class="ti-option" id="iLoop">
+          <option value="true">True</option>
+          <option value="false" selected>False</option>
+        </select>
+      </div>
+
+      <div class="ti-option-box">
+        <label>Loop Delay</labeL>
+        <input class="ti-option" type="number" id="iLoopDelay" placeholder="loopDelay">
+      </div>
+
+      <a href="http://macarthur.me/docs/#options" class="settings-link">Wait, what do these settings actually do?</a>
+
+      <textarea rows="3" id="stringTI" placeholder="Enter one or multiple strings per line. You can use HTML too!"></textarea>
+
+    </div>
+
+    <input class="Button Button--green" type="submit" id="TISubmit" value="Type it!">
+
+  </form>
+
+  <div id="TIOutputBox">
+
+    <div id="TIOutput">
+
+      <span id="tempText">output box</span>
+
+    </div>
+
+  </div>

@@ -1,0 +1,410 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 62.5%;
+  height: 100%;
+  text-align: center;
+}
+
+a{
+  color: black;
+  cursor: pointer;
+
+  &:hover {
+    color: $pink;
+  }
+}
+
+p {
+  margin: 0 0 3px;
+  color: $gray;
+
+  .Container--home & {
+    font-size: 2rem;
+  }
+}
+
+.description {
+  margin-bottom: 2.5rem;
+}
+
+hr {
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.09);
+  border: 0;
+  margin-top: 2.1rem;
+}
+
+.section-divider {
+  margin: 6rem auto;
+
+  @media screen and (max-width: 992px) {
+    margin: 4rem auto;
+  }
+
+  @media screen and(max-width: 600px) {
+    margin-bottom: 1rem;
+  }
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  margin-bottom: 4rem;
+
+  @media screen and (max-width: 992px) {
+    margin-bottom: 1rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+  font-weight: normal;
+  margin: 2rem 0 1rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+}
+
+span,
+li {
+  font-size: 2rem;
+}
+
+code {
+  white-space: nowrap;
+}
+
+a,p,code,.CodeBlock,th,td {
+  font-size: 1.5rem;
+}
+
+.Title--description {
+  margin-bottom: 1rem;
+}
+
+.Description {
+  margin-bottom: 3rem;
+}
+
+.Demo {
+  @extend %clearfix;
+}
+
+table {
+  border: 1px solid rgba(128,128,128,0.1);
+
+  .code {
+    &:first-child {
+      margin-top: 1rem;
+    }
+  }
+}
+
+th,td {
+  text-align: left;
+  padding: 1rem;
+}
+
+tr:nth-child(2n) {
+  background: rgba(128,128,128,0.08);
+}
+
+pre {
+  margin: 0;
+}
+
+a {
+  font-weight: 600;
+  
+  .Body--home &{
+    font-size: 2rem;
+  }
+}
+
+section {
+  @extend %clearfix;
+  position: relative;
+}
+
+.right {
+  width: 70%;
+}
+
+.left {
+  width: 30%;
+}
+
+.left,
+.right {
+  float: left;
+  padding: 0 2rem;
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
+}
+
+.CodeBlock{
+  display: block;
+  position: relative;
+  text-align: left;
+  padding: 1rem 2rem 1rem;
+  border: 1px solid rgba(128,128,128,0.1);
+  background: $light-gray;
+  word-wrap: break-word;
+  font-size: 2rem;
+}
+
+.CodeBlock--source {
+  text-align: center;
+}
+
+.CodeBlock--input {
+  text-align: left;
+  margin-bottom: 3rem;
+}
+
+small {
+  position: absolute;
+  height: 45px;
+  width: 75px;
+  text-align: center;
+  display: block;
+  right: -45px;
+  transform: rotate(90deg);
+  border-bottom: 0;
+  font-size: 2rem;
+  opacity: .25;
+}
+
+.chevron {
+  width: 35px;
+  position: absolute;
+  padding: 0;
+  font-size: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: upDown .45s ease-in-out infinite alternate;
+  bottom: -4.5rem;
+}
+
+.setup-blocks {
+  @extend %clearfix;
+  display: flex;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.setup-block {
+  width: 33.33%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+
+  & + .setup-block {
+    margin-left: 1rem;
+  }
+
+  .Button {
+    margin-top: auto;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    display: block;
+    
+    & + .setup-block {
+      margin: 1.5rem 0 0;
+    }
+  }
+}
+
+.install-blocks {
+  @extend %clearfix;
+  display: flex;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+
+.install-block {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  width: 33.333%;
+  padding: 0 1rem;
+
+  p {
+    display: block;
+    flex-grow: 1;
+    margin-bottom: 3rem;
+  }
+
+  .CodeBlock {
+    flex: 0 1 33%;
+    margin-top: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    display: block;
+  }
+}
+
+.step-num {
+  font-size: 25px;
+  margin: 1.5rem auto 2rem;
+  width: 50px;
+  height: 50px;
+  border: 3px solid black;
+  border-radius: 50%;
+  line-height: 40px;
+}
+
+.just-a-class {
+  font-size: inherit;
+  font-weight: 800;
+  font-style: italic;
+  color: $green;
+}
+
+.middle-th {
+  width: 75%;
+}
+
+.Section--message {
+  margin: 4rem 0 6rem;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Section--options,
+  .Section--advanced_usage {
+    table {
+
+      tr {
+        &:first-child {
+          display: none;
+        }
+
+        &:last-child {
+          td:last-child {
+            border: 0;
+          }
+        }
+      }
+
+      td {
+        width: 100%;
+        display: block;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid rgba($gray, .3);
+        margin: 0;
+
+        &:before {
+          content: '';
+          font-weight: bold;
+          position: absolute;
+          left: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5rem;
+        }
+
+        &:nth-child(1){
+          &:before {
+            content: 'Option';
+          }
+        }
+
+        &:nth-child(2){
+          &:before {
+            content: 'Description';
+          }
+        }
+
+        &:nth-child(3){
+          &:before {
+            content: 'Default';
+          }
+        }
+      }
+    }
+  }
+
+  .Section--advanced_usage {
+    table {
+      td {
+        &:nth-child(1){
+          &:before {
+            content: 'Function';
+          }
+        }
+
+        &:nth-child(2){
+          &:before {
+            content: 'Arguments';
+          }
+        }
+
+        &:nth-child(3){
+          &:before {
+            content: 'Description';
+          }
+        }
+      }
+    }
+  }
+}
+
+.Section--description {
+  padding: 5rem 0;
+  line-height: 1.5;
+
+  span,
+  p {
+    display: inline-block;
+    color: $gray;
+  }
+
+  p + p {
+    margin-top: 2rem;
+  }
+}
