@@ -3,7 +3,7 @@ layout: default
 title: home
 ---
 
-<a name="top"></a>
+<a name="top" title="Top of Page"></a>
 
 <header id="header">
   <div class="header-content">
@@ -13,7 +13,7 @@ title: home
           <h1 class="main-header">TypeIt</h1>
           <span id="typeit-box"></span>
         </div>
-        <a id="typeit-box-code-link">view the code for this instance</a>
+        <a id="typeit-box-code-link" title="View Source for this Instance">view the code for this instance</a>
       </div>
       <div class="base">
         <div class="power"></div>
@@ -21,13 +21,13 @@ title: home
     </div>
   </div>
   <div class="CTALinks">
-  <a href="https://github.com/alexmacarthur/typeit">
+  <a href="https://github.com/alexmacarthur/typeit" title="TypeIt on Github">
     <div class="github-icon-holder">
       {% include icon-github.svg %}
     </div>
     <span class="github-text">See the Project on GitHub</span>
   </a>
-  <a href="http://macarthur.me/typeit/docs">
+  <a href="http://macarthur.me/typeit/docs" title="TypeIt Documentation">
     <div class="github-icon-holder">
       {% include icon-book.svg %}
     </div>
@@ -41,7 +41,7 @@ title: home
       <em>// call .typeIt() on my element and set global options</em><br>
       $('#typeit-box').typeIt({<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;speed: 100,<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startDelay: 2000<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;startDelay: 1250<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback(): function() {<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$('#typeit-box-code-link').addClass('is-visible');<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
@@ -67,67 +67,72 @@ title: home
   </div>
 </header>
 
-<div class="container Container--home">
+<main class="Main--home">
 
-  <section class="Section--description">
+  <section class="Section--home">
 
-    <h2 class="Title--description">About TypeIt</h2>
+    <div class="Container">
 
-    <p>
-      TypeIt is the most versatile, user-friendly jQuery animated typing plugin on the planet. In simple use, it allows you to type single or multiple strings that break lines, delete &amp; replace each other, and it even handles HTML tags &amp; entities.
-    </p>
+      <h2 class="Title--description">About TypeIt</h2>
 
-    <p>
-      For more advanced, controlled typing effects, TypeIt comes with companion functions that can be chained to tweak your typing down to the smallest character, enabling you to type not just a few strings of text, but an entire narrative, with complete control over speed,  characters, line breaks, deletions, pauses, everything.
-    </p>
-   
-    <span id="description"></span>
+      <p>
+        TypeIt is the most versatile, user-friendly jQuery animated typing plugin on the planet. In simple use, it allows you to type single or multiple strings that break lines, delete &amp; replace each other, and it even handles HTML tags &amp; entities.
+      </p>
+
+      <p>
+        For more advanced, controlled typing effects, TypeIt comes with companion functions that can be chained to tweak your typing down to the smallest character, enabling you to type not just a few strings of text, but an entire narrative, with complete control over speed,  characters, line breaks, deletions, pauses, everything.
+      </p>
+     
+      <span id="description"></span>
+
+    </div>
 
   </section>
 
-  <hr class="section-divider">
-
-  <section class="Section--">
+  <section class="Section--home">
+    <div class="Container">
 
     {% include partial-demo_form.html %}
 
     <a id="scrollTo"></a>
-
+    </div>
   </section>
 
-  <hr class="section-divider">
+  <section class="Section--home">
 
-  <section class="Section--">
+    <div class="Container">
 
-    <h2>License Options</h2>
+      <h2>License Options</h2>
 
-    <div class="setup-blocks">
+      <div class="setup-blocks">
 
-      <div class="setup-block">
-        <h3>Personal</h3>
-        <p class="description">Use TypeIt all you want for any of your personal, non-commercial projects.</p>
-        <a href="#installation" class="Button">Get It</a>
-      </div>
+        <div class="setup-block">
+          <h3>Personal</h3>
+          <p class="description">Use TypeIt all you want for any of your personal, non-commercial projects.</p>
+          <a href="#installation" class="Button" title="TypeIt Personal License">Get It</a>
+        </div>
 
-      <div class="setup-block">
-        <h3>Single Commercial</h3>
-        <p class="description">Use TypeIt for a single commercial project. Includes lifetime support.</p>
-        <a href="http://www.uplabs.com/posts/typeit-a-jquery-animated-typing-plugin" class="Button">Get It</a>
-      </div>
+        <div class="setup-block">
+          <h3>Single Commercial</h3>
+          <p class="description">Use TypeIt for a single commercial project. Includes lifetime support.</p>
+          <a href="http://www.uplabs.com/posts/typeit-a-jquery-animated-typing-plugin" class="Button" title="TypeIt Commercial License">Get It</a>
+        </div>
 
-      <div class="setup-block">
-        <h3>Extended Commercial</h3>
-        <p class="description">Use TypeIt for an unlimited number of commercial projects. Includes lifetime support.</p>
-        <a href="http://www.uplabs.com/posts/typeit-a-jquery-animated-typing-plugin" class="Button">Get It</a>
+        <div class="setup-block">
+          <h3>Extended Commercial</h3>
+          <p class="description">Use TypeIt for an unlimited number of commercial projects. Includes lifetime support.</p>
+          <a href="http://www.uplabs.com/posts/typeit-a-jquery-animated-typing-plugin" class="Button" title="TypeIt Extended Commercial License">Get It</a>
+        </div>
+
       </div>
 
     </div>
 
   </section>
 
-  <hr class="section-divider">
+  <section class="Section--home" id="installation">
 
-  <section class="Section--" id="installation">
+    <div class="Container">
 
     <h2>Easy Installation Steps</h2>
 
@@ -136,12 +141,14 @@ title: home
       <div class="install-block">
 
         <div class="step-num">1</div>
-        <h3>Get TypeIt</h3>
+        <h3>Load jQuery &amp; TypeIt on Your Page</h3>
 
-        <p>Available from <a href="https://github.com/alexmacarthur/typeit">Github</a>, <a href="https://www.npmjs.com/package/typeit">npm</a>, <a href="http://www.uplabs.com/posts/typeit-a-jquery-animated-typing-plugin">UpLabs</a>, or <a href="https://www.jsdelivr.com/projects/jquery.typeit">CDN</a> (recommended). </p>
+        <p>Available from <a href="https://github.com/alexmacarthur/typeit" title="TypeIt on Github">Github</a>, <a href="https://www.npmjs.com/package/typeit" title="TypeIt on npm">npm</a>, <a href="http://www.uplabs.com/posts/typeit-a-jquery-animated-typing-plugin" title="TypeIt on UpLabs">UpLabs</a>, or <a href="https://www.jsdelivr.com/projects/jquery.typeit" title="TypeIt CDN">CDN</a> (recommended). </p>
 
-        <div class="CodeBlock CodeBlock--source">
-          https://cdn.jsdelivr.net/jquery.typeit/4.0.0/typeit.min.js
+        <div class="CodeBlock">
+          &lt;script src="https://code.jquery.com/jquery-2.1.4.min.js"&gt;&lt;/script&gt;
+          <br>
+          &lt;script src="https://cdn.jsdelivr.net/jquery.typeit/4.0.0/typeit.min.js"&gt;&lt;/script&gt;
         </div>
 
       </div>
@@ -149,22 +156,9 @@ title: home
       <div class="install-block">
 
         <div class="step-num">2</div>
-        <h3>Get jQuery (v1.8.0+)</h3>
+        <h3>Call TypeIt</h3>
 
-        <p>Let me make it easy for you.</p>
-
-        <div class="CodeBlock CodeBlock--source">
-          https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
-        </div>
-
-      </div>
-
-      <div class="install-block">
-
-        <div class="step-num">3</div>
-        <h3>Select Your Element</h3>
-
-        <p>After this, you're all set.</p>
+        <p>Select an element, call typeIt(), and define your options.</p>
 
         <div class="CodeBlock">
           $('#element').typeIt({<br>
@@ -176,11 +170,13 @@ title: home
 
     </div>
 
+  </div>
+
   </section>
 
-  <hr class="section-divider">
+  <section class="Section--home">
 
-  <section class="Section--">
+    <div class="Container">
     <h2 class="Title--description">Simple Usage</h2>
     <p class="Description">Just select an empty HTML element, pass in your options, and you're ready for typing effects like this.</p>
 
@@ -189,7 +185,7 @@ title: home
       <div class="left">
         <h3>Type a simple, single string.</h3>
 
-        <a class="Button Button--green" id="btn-example1">Rerun</a>
+        <a class="Button Button--green" id="btn-example1" title="Rerun Example">Rerun</a>
       </div>
 
       <div class="right">
@@ -217,11 +213,13 @@ title: home
       </div>
     </div>
 
+  </div>
+
   </section>
 
-  <hr class="section-divider">
+  <section class="Section--home">
 
-    <section class="Section--">
+    <div class="Container">
 
     <div class="Demo">
 
@@ -229,7 +227,7 @@ title: home
 
         <h3>Type multiple strings that replace each other.</h3>
 
-        <a class="Button Button--green" id="btn-example2">Rerun</a>
+        <a class="Button Button--green" id="btn-example2" title="Rerun Example">Rerun</a>
 
       </div>
 
@@ -260,12 +258,12 @@ title: home
       </div>
 
     </div>
-
+  </div>
   </section>
 
-  <hr class="section-divider">
+  <section class="Section--home">
 
-  <section class="Section--">
+    <div class="Container">
 
     <div class="Demo">
 
@@ -273,7 +271,7 @@ title: home
 
         <h3>Type multiple strings that break to new lines.</h3>
 
-        <a class="Button Button--green" id="btn-example3">Rerun</a>
+        <a class="Button Button--green" id="btn-example3" title="Rerun Example">Rerun</a>
 
       </div>
 
@@ -304,11 +302,13 @@ title: home
 
     </div>
 
-  </section>
+  </div>
 
-  <hr class="section-divider">
+  </section>
   
-  <section class="Section--">
+  <section class="Section--home">
+
+    <div class="Container">
     <h2 class="Title--description">Advanced Usage</h2>
     <p class="Description">If you want to control every character of your strings, a series of companion functions are built right into TypeIt. You'll be able to do things like partially delete strings, change speed on the fly, break lines whenever you like, and more.</p>
 
@@ -317,7 +317,7 @@ title: home
       <div class="left">
         <h3>Don't just type a few strings. Create an entire, dynamic narrative.</h3>
 
-        <a class="Button Button--green" id="btn-example4">Rerun</a>
+        <a class="Button Button--green" id="btn-example4" title="Rerun Example">Rerun</a>
       </div>
 
       <div class="right">
@@ -359,22 +359,25 @@ title: home
       </div>
     </div>
 
+  </div>
+
   </section>
 
-  <hr class="section-divider">
+  <section class="Section--home">
 
-  <section class="Section--docs">
+    <div class="Container">
     <h3>Ready to learn more about TypeIt?</h3>
-    <a class="Button" href="http://macarthur.me/typeit/docs">View the Docs</a>
+    <a class="Button" href="http://macarthur.me/typeit/docs" title="TypeIt Documentation">View the Docs</a>
+    <br>
+    <a href="#top" title="Back to Top">Back to Top</a>
+
+  </div>
   </section>
 
-  <a href="#top">Back to Top</a>
-
-  <hr class="section-divider">
-
-  <section class="Section--message">
+  <section class="Section--home">
+    <div class="Container">
     <h3>Like it? Hate it with a burning, insatiable passion? Let me know!</h3>
-    {% include icon-chevron.svg %}
+  </div>
   </section>
 
-</div>
+</main>

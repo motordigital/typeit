@@ -39,7 +39,7 @@ var Promo = {
   headerTyping : function() {
     $('#typeit-box').typeIt({
       speed: 100,
-      startDelay: 1500, 
+      startDelay: 1250, 
       callback: function() {
         $('#typeit-box-code-link').addClass('is-visible');
       }
@@ -114,8 +114,6 @@ var Promo = {
 
     $sections.on('click','#btn-example1', function() {
       if (Promo.examples.$example1.data('typeit') !== undefined) {
-        clearTimeout(Promo.examples.$example1.data('typeit').tTO);
-        clearTimeout(Promo.examples.$example1.data('typeit').dTO);
         Promo.examples.$example1.removeData('typeit');
       }
       Promo.examples.$example1.html('');
@@ -124,8 +122,6 @@ var Promo = {
 
     $sections.on('click','#btn-example2',function() {
       if (Promo.examples.$example2.data('typeit') !== undefined) {
-        clearTimeout(Promo.examples.$example2.data('typeit').tTO);
-        clearTimeout(Promo.examples.$example2.data('typeit').dTO);
         Promo.examples.$example2.removeData('typeit');
       }
       Promo.examples.$example2.html('');
@@ -134,8 +130,6 @@ var Promo = {
 
     $sections.on('click','#btn-example3', function() {
       if (Promo.examples.$example3.data('typeit') !== undefined) {
-        clearTimeout(Promo.examples.$example3.data('typeit').tTO);
-        clearTimeout(Promo.examples.$example3.data('typeit').dTO);
         Promo.examples.$example3.removeData('typeit');
       }
       Promo.examples.$example3.html('');
@@ -144,8 +138,6 @@ var Promo = {
 
     $sections.on('click','#btn-example4', function() {
       if (Promo.examples.$example4.data('typeit') !== undefined) {
-        clearTimeout(Promo.examples.$example4.data('typeit').tTO);
-        clearTimeout(Promo.examples.$example4.data('typeit').dTO);
         Promo.examples.$example4.removeData('typeit');
       }
       Promo.examples.$example4.html('');
@@ -165,26 +157,18 @@ var Promo = {
       e.preventDefault();
 
       var tiOutput = $('#TIOutput');
-      var curData = tiOutput.data('typeit');
-
-      // if there's another process going on, stop it and wipe the output box
-      if(curData !== undefined) {
-        clearTimeout(curData.tTO);
-        clearTimeout(curData.dTO);
-        curData.s.loop = false;
-        tiOutput.removeData();
-      }
 
       tiOutput.html('');
 
       // get variables figured out
       var strings;
       var cleanedstrings = [];
-      if($('#stringTI').val() === '') {
+      var $textArea = $('#stringTI');
+
+      if($textArea.val() === '') {
         cleanedstrings = 'You didn\'t enter a string!';
       } else {
-        strings = $('#stringTI').val().split('\n');
-        // remove empty array item
+        strings = $textArea.val().split('\n');
         for (var i = 0; i < strings.length; i++) {
           if (strings[i] !== undefined && strings[i] !== null && strings[i] !== "") {
             cleanedstrings.push(strings[i]);
@@ -192,23 +176,28 @@ var Promo = {
         }
       }
 
-      var newHeight = ($('#stringTI').val()) ? (cleanedstrings.length * 38) + 40 : 75;
+      var newHeight = ($textArea.val()) ? (cleanedstrings.length * 38) + 40 : 75;
       var speed = $('#iSpeed').val();
-      var html = $('#iHTML').val() === 'true' ? true : false;
-      var lifeLike = $('#iLifeLike').val() === 'true' ? true : false;
-      var cursor = $('#iCursor').val() === 'true' ? true : false;
+      var html = $('#iHTML').val() === 'true';
+      var lifeLike = $('#iLifeLike').val() === 'true';
+      var cursor = $('#iCursor').val() === 'true';
       var cursorSpeed = $('#iCursorSpeed').val();
-      var breakLines = $('#iBreakLines').val() === 'true' ? true : false;
+      var breakLines = $('#iBreakLines').val() === 'true';
       var breakDelay = $('#iBreakDelay').val();
       var breakStart = $('#iBreakStart').val();
       var startDelay = $('#iStartDelay').val();
-      var loop = $('#iLoop').val() === 'true' ? true : false;
+      var loop = $('#iLoop').val() === 'true';
       var loopDelay = $('#iLoopDelay').val();
+      var startDelete = $('#iStartDelete').val() === 'true';
 
-      // hide the temp text
       $('#tempText').animate({
         opacity: 0
       });
+
+      if(startDelete) {
+        $('#TIOutput').html($textArea.val());
+        cleanedstrings = [];
+      }
 
       // expand the container
       $('#TIOutputBox').animate({
@@ -232,7 +221,8 @@ var Promo = {
               startDelay: Number(startDelay),
               loop: loop,
               loopDelay: Number(loopDelay),
-              html: html
+              html: html,
+              startDelete: startDelete
             });
         }, 800);
       });
@@ -269,7 +259,7 @@ var Promo = {
 
     if($(window).width() > 600 && $list.length) {
       var $list = $('.SectionList');
-      var $content = $('.Docs-content');
+      var $content = $('.Main--docs');
       var $listPos = $list.offset().top;
       var $listWidth = $list.outerWidth();
 

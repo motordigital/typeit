@@ -24,13 +24,61 @@ p {
   margin: 0 0 3px;
   color: $gray;
 
-  .Container--home & {
+  .Main--home & {
     font-size: 2rem;
   }
 }
 
 .description {
   margin-bottom: 2.5rem;
+}
+
+.Section--home {
+
+  h2 {
+    margin-top: 0;
+  }
+
+  &:not(:last-child) {
+    padding: 7rem 0;
+  }
+
+  &:first-child {
+    padding: 5rem 0;
+    line-height: 1.5;
+
+    span,
+    p {
+      display: inline-block;
+      color: $gray;
+    }
+
+    p + p {
+      margin-top: 2rem;
+    }
+  }
+
+  &:nth-last-child(2) {
+
+    h3 {
+      margin: 0;
+    }
+
+    .Button {
+      margin: 2rem 0;
+      display: inline-block;
+    }
+  }
+
+  &:last-child {
+    h3 {
+      margin: 2rem 0;
+    }
+  }
+
+  &:nth-child(2n + 1) {
+    background: rgba($light-gray, .1);
+  }
 }
 
 hr {
@@ -98,7 +146,7 @@ a,p,code,.CodeBlock,th,td {
 }
 
 .Title--description {
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
 
 .Description {
@@ -163,7 +211,7 @@ section {
   }
 }
 
-.container {
+.Container {
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
@@ -182,10 +230,6 @@ section {
   background: $light-gray;
   word-wrap: break-word;
   font-size: 2rem;
-}
-
-.CodeBlock--source {
-  text-align: center;
 }
 
 .CodeBlock--input {
@@ -253,7 +297,6 @@ small {
 
 .install-blocks {
   @extend %clearfix;
-  display: flex;
 
   @media screen and (max-width: 768px) {
     display: block;
@@ -261,21 +304,17 @@ small {
 }
 
 .install-block {
-  display: flex;
-  flex-direction: column;
-  float: left;
-  width: 33.333%;
   padding: 0 1rem;
+  width: 100%;
 
   p {
     display: block;
-    flex-grow: 1;
     margin-bottom: 3rem;
   }
 
   .CodeBlock {
-    flex: 0 1 33%;
     margin-top: auto;
+    display: inline-block;
   }
 
   @media screen and (max-width: 768px) {
@@ -303,14 +342,6 @@ small {
 
 .middle-th {
   width: 75%;
-}
-
-.Section--message {
-  margin: 4rem 0 6rem;
-
-  h3 {
-    margin: 0;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -391,20 +422,5 @@ small {
         }
       }
     }
-  }
-}
-
-.Section--description {
-  padding: 5rem 0;
-  line-height: 1.5;
-
-  span,
-  p {
-    display: inline-block;
-    color: $gray;
-  }
-
-  p + p {
-    margin-top: 2rem;
   }
 }

@@ -1,6 +1,6 @@
 header {
   position: relative;
-  margin: 0 0 3rem;
+  margin: 0;
   padding: 0;
   border-bottom: 2px solid $light-gray;
   transition: height .25s ease-in;
@@ -9,12 +9,13 @@ header {
 .page-header {
   @extend %clearfix;
   padding: 2rem 0;
+  margin-bottom: 3rem;
 
   @media screen and (max-width: 600px) {
     padding-top: 65px;
   }
 
-  .container {
+  .Container {
     display: flex;
     justify-content: space-between;
     align-items: center;
