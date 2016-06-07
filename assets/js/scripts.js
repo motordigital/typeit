@@ -27,14 +27,12 @@ var Promo = {
   }, 
 
   sectionHeaders : function() {
-    var $body = $('#body');
-
-    $body.find('section').find('h2').typeIt({
+    $('#body').find('section').find('h2').typeIt({
       speed: 50,
       autoStart: false
     });
 
-    $body.find('section').find('h3').typeIt({
+    $('#docsMain').find('section').find('h3').typeIt({
       speed: 50,
       autoStart: false
     });
@@ -47,7 +45,7 @@ var Promo = {
   headerTyping : function() {
     $('#typeit-box').typeIt({
       speed: 100,
-      startDelay: 1250, 
+      startDelay: 900, 
       callback: function() {
         $('#typeit-box-code-link').addClass('is-visible');
       }
