@@ -16,24 +16,32 @@ var Promo = {
     this.showCode();
     this.fixedMenu();
     this.demoForm();
-    this.example1();
-    this.example2();
-    this.example3();
-    this.example4();
+
+    $(window).load(function() {
+      this.sectionHeaders();
+      this.example1();
+      this.example2();
+      this.example3();
+      this.example4();
+    }.bind(this));
   }, 
+
+  sectionHeaders : function() {
+    var $body = $('#body');
+
+    $body.find('section').find('h2').typeIt({
+      speed: 50,
+      autoStart: false
+    });
+
+    $body.find('section').find('h3').typeIt({
+      speed: 50,
+      autoStart: false
+    });
+  },
 
   setHeaderSize : function() {
     $('#header').height($(window).height());
-
-    $('.Body--home').find('section').find('h2').typeIt({
-      speed: 50,
-      autoStart: false
-    });
-
-    $('.Body--home').find('section').find('h3').typeIt({
-      speed: 50,
-      autoStart: false
-    });
   }, 
 
   headerTyping : function() {
