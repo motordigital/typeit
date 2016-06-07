@@ -57,7 +57,7 @@
     this.tel = this.el.find('span');
    
     this.insert = function(c) { 
-      this.tel.append(c);
+     this.tel.append(c);
     };
     
     if(this.s.startDelete) {
@@ -273,7 +273,6 @@
   },
 
   _isVisible : function() {
-  
     var win = $(window);
     
     var viewport = {
