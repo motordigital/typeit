@@ -230,6 +230,7 @@ section {
   background: $light-gray;
   word-wrap: break-word;
   font-size: 2rem;
+  max-width: 100%;
 }
 
 .CodeBlock--input {
