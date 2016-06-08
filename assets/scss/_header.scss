@@ -151,7 +151,7 @@ header {
 
 .github-icon-holder {
   width: 25px;
-  margin: 0 auto;
+  margin: 0 auto .75rem;
 
   path {
     fill: black;
@@ -160,13 +160,15 @@ header {
 
 .CTALinks {
   position: absolute;
-  display: flex;
   display: block;
   bottom: 2rem;
   width: 100%;
 
   @media screen and (max-width: 600px) {
-    display: block;
+    padding: 0 1rem;
+    display: flex;
+    align-items: baseline;  
+    justify-content: space-around;  
   }
 
   a {
@@ -175,16 +177,13 @@ header {
     left: 0;
     width: auto;
     text-align: center;
-
-    @media screen and (max-width: 600px) {
-      width: 100%;
-    }
+    line-height: .75;
 
     & + a {
       margin-left: 2rem;
 
       @media screen and (max-width: 600px) {
-        margin: 1rem 0 0;
+        margin-left: 1rem;
       }
     }
     
@@ -199,6 +198,10 @@ header {
 
 .github-text {
   font-size: 1.5rem;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.25rem;
+  }
 }
 
 .main-header {
