@@ -1,3 +1,5 @@
+'use strict'; 
+
 var Promo = {
 
   examples : {
@@ -17,7 +19,7 @@ var Promo = {
     this.fixedMenu();
     this.demoForm();
 
-    $(window).load(function() {
+    $(window).on('load', function() {
       this.sectionHeaders();
       this.example1();
       this.example2();
@@ -236,7 +238,7 @@ var Promo = {
   }, 
 
   smoothScroll : function() {
-    $('a[href*=#]:not([href=#])').click(function() {
+    $('a[href*=#]:not([href=#])').on('click', function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -300,6 +302,6 @@ $(document).ready(function() {
   Promo.init();
 });
 
-$(window).resize(function() {
+$(window).on('resize', function() {
   Promo.setHeaderSize();
 });
