@@ -4,6 +4,14 @@ header {
   padding: 0;
   border-bottom: 2px solid $light-gray;
   transition: height .25s ease-in;
+
+  .disclaimer {
+    position: absolute;
+    width: 100%;
+    bottom: -2.5rem;
+    left: 0;
+    font-size: 1.5rem;
+  }
 }
 
 .page-header {
@@ -86,7 +94,7 @@ header {
   width: 100%;
   text-align: center;
   left: 0;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 
   &.is-visible {
     opacity: 1;

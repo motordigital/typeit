@@ -9,6 +9,10 @@ var Promo = {
     $example4 : $('#example4')
   }, 
 
+  els : {
+    sectionList : $('.SectionList')
+  },
+
   init : function() {
     this.setHeaderSize();
     this.smoothScroll();
@@ -238,7 +242,7 @@ var Promo = {
   }, 
 
   smoothScroll : function() {
-    $('a[href*=#]:not([href=#])').on('click', function() {
+    $("a[href*='#']:not([href='#'])").on('click', function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -246,7 +250,8 @@ var Promo = {
           $('html,body').animate({
             scrollTop: target.offset().top
           }, 300, function() {
-            $('.SectionList').removeClass('is-open');
+            Promo.els.sectionList.removeClass('is-open');
+            history.pushState("", document.title, window.location.pathname);
           });
           return false;
         }
@@ -258,15 +263,15 @@ var Promo = {
     var $sidebar = $('.Docs-sidebar');
 
     $('.Docs').on('click','#menu-toggle', function() {
-      $('.SectionList').toggleClass('is-open');
+      Promo.els.sectionList.toggleClass('is-open');
     });
   }, 
 
   fixedMenu : function() {
-    var $list = $('.SectionList');
+    var $list = Promo.els.sectionList;
 
     if($(window).width() > 600 && $list.length) {
-      var $list = $('.SectionList');
+      var $list = Promo.els.sectionList;
       var $content = $('.Main--docs');
       var $listPos = $list.offset().top;
       var $listWidth = $list.outerWidth();
