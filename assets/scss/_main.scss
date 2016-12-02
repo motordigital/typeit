@@ -145,12 +145,8 @@ a,p,code,.CodeBlock,th,td {
   font-size: 1.5rem;
 }
 
-.Title--description {
-  margin: 0 0 1rem;
-}
-
-.Description {
-  margin-bottom: 3rem;
+.ti-header {
+	margin-bottom: 1rem;
 }
 
 .Demo {
@@ -182,7 +178,7 @@ pre {
 
 a {
   font-weight: 600;
-  
+
   .Body--home &{
     font-size: 2rem;
   }
@@ -289,7 +285,7 @@ small {
   @media screen and (max-width: 600px) {
     width: 100%;
     display: block;
-    
+
     & + .setup-block {
       margin: 1.5rem 0 0;
     }
@@ -307,6 +303,10 @@ small {
 .install-block {
   padding: 0 1rem;
   width: 100%;
+
+  & + & {
+    margin-top: 4rem;
+  }
 
   p {
     display: block;
@@ -327,11 +327,12 @@ small {
 .step-num {
   font-size: 25px;
   margin: 1.5rem auto 2rem;
-  width: 50px;
-  height: 50px;
-  border: 3px solid black;
+  width: 75px;
+  height: 75px;
+  border: 2px solid black;
   border-radius: 50%;
-  line-height: 40px;
+  line-height: 67px;
+  font-size: 4rem;
 }
 
 .just-a-class {

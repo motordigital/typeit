@@ -17,14 +17,38 @@
     <meta name="twitter:title" content="{{ site.title }}">
     <meta name="twitter:description" content="{{ site.description }}">
     <meta name="twitter:image" content="{{ site.opengraph }}">
-    
+
     <meta name="google-site-verification" content="j-Rgj8f6KfZUw7Fpk49vs7Jl5jmTjX9PqXr4rMf3cW4" />
 
     <link rel="shortcut icon" href="{% if page.title == 'docs' %}../{% endif %}assets/img/favicon.ico" type="image/x-icon" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200italic,400,600,600italic,700' rel='stylesheet' type='text/css'>
-	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+	  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
 	<style type="text/css">{% include style.css %}</style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "SoftwareApplication",
+    	"applicationCategory": "WebApplication",
+      "description" : "{{ site.description }}",
+      "screenshot" : "{{ site.opengraph }}",
+      "softwareVersion" : "{{ site.version }}",
+      "license" : "GPL-2.0",
+      "operatingSystem": "jQuery 1.8 or higher.",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "price": "9.00",
+          "seller": {
+            "@type": "Person",
+      			"name": "Alex MacArthur | Web Developer in Nashville",
+          	"telephone" : "507-476-1414",
+            "sameAs" : [ "http://www.twitter.com/amacarthur", "https://www.linkedin.com/in/alexmacarthur", "https://github.com/alexmacarthur"]
+          }
+         }
+      }
+    </script>
 
 	<title>{{ site.title }}</title>
 </head>

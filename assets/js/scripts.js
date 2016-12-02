@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 
 var Promo = {
 
@@ -7,7 +7,7 @@ var Promo = {
     $example2 : $('#example2'),
     $example3 : $('#example3'),
     $example4 : $('#example4')
-  }, 
+  },
 
   els : {
     sectionList : $('.SectionList')
@@ -30,7 +30,7 @@ var Promo = {
       this.example3();
       this.example4();
     }.bind(this));
-  }, 
+  },
 
   sectionHeaders : function() {
     $('#body').find('section').find('h2').typeIt({
@@ -46,12 +46,12 @@ var Promo = {
 
   setHeaderSize : function() {
     $('#header').height($(window).height());
-  }, 
+  },
 
   headerTyping : function() {
     $('#typeit-box').typeIt({
       speed: 100,
-      startDelay: 900, 
+      startDelay: 900,
       callback: function() {
         $('#typeit-box-code-link').addClass('is-visible');
       }
@@ -70,7 +70,7 @@ var Promo = {
     .tiType('on the ')
     .tiPause(600)
     .tiType('<em>planet.</em>');
-  }, 
+  },
 
   example1 : function() {
     this.examples.$example1.typeIt({
@@ -88,7 +88,7 @@ var Promo = {
       autoStart: false
     });
   },
-  
+
 
   example3 : function() {
     this.examples.$example3.typeIt({
@@ -155,11 +155,12 @@ var Promo = {
       Promo.examples.$example4.html('');
       Promo.example4();
     });
-  }, 
+  },
 
   demoForm : function() {
     $('#iSpeed').val('100');
     $('#iBreakDelay').val('750');
+    $('#iDeleteDelay').val('750');
     $('#iCursorSpeed').val('1000');
     $('#iStartDelay').val('250');
     $('#iLoopDelay').val('750');
@@ -196,6 +197,7 @@ var Promo = {
       var cursorSpeed = $('#iCursorSpeed').val();
       var breakLines = $('#iBreakLines').val() === 'true';
       var breakDelay = $('#iBreakDelay').val();
+      var deleteDelay = $('#iDeleteDelay').val();
       var breakStart = $('#iBreakStart').val();
       var startDelay = $('#iStartDelay').val();
       var loop = $('#iLoop').val() === 'true';
@@ -230,6 +232,7 @@ var Promo = {
               cursorSpeed: Number(cursorSpeed),
               breakLines: breakLines,
               breakDelay: Number(breakDelay),
+              deleteDelay: Number(deleteDelay),
               startDelay: Number(startDelay),
               loop: loop,
               loopDelay: Number(loopDelay),
@@ -239,7 +242,7 @@ var Promo = {
         }, 800);
       });
     });
-  }, 
+  },
 
   smoothScroll : function() {
     $("a[href*='#']:not([href='#'])").on('click', function() {
@@ -257,7 +260,7 @@ var Promo = {
         }
       }
     });
-  }, 
+  },
 
   mobileMenu : function() {
     var $sidebar = $('.Docs-sidebar');
@@ -265,7 +268,7 @@ var Promo = {
     $('.Docs').on('click','#menu-toggle', function() {
       Promo.els.sectionList.toggleClass('is-open');
     });
-  }, 
+  },
 
   fixedMenu : function() {
     var $list = Promo.els.sectionList;
@@ -276,8 +279,8 @@ var Promo = {
       var $listPos = $list.offset().top;
       var $listWidth = $list.outerWidth();
 
-      $(window).scroll(function(){    
-        if ($(this).scrollTop() > $listPos){ 
+      $(window).scroll(function(){
+        if ($(this).scrollTop() > $listPos){
           $list.addClass('is-fixed').css('width', $listWidth);
           $content.css('margin-left', $listWidth);
         }

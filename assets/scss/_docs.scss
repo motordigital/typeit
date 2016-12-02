@@ -1,5 +1,5 @@
 .Docs {
-	@extend .container;
+	@extend .Container;
 	@extend %clearfix;
 }
 
@@ -32,7 +32,7 @@
 			margin-top: 2rem;
 		}
 	}
-		
+
 	li {
 		@extend p;
 		position: relative;
@@ -167,6 +167,7 @@
 .HorizontalList {
 	@extend %clearfix;
 	padding: 0;
+  margin-top: 2rem;
 
 	li {
 		display: inline-block;
@@ -222,7 +223,7 @@
 }
 
 .HookUpSteps {
-	counter-reset: steps; 
+	counter-reset: steps;
 
 	li {
 		counter-increment: steps;

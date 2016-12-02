@@ -10,7 +10,7 @@
 
 	    <tr>
 			<td>strings</td>
-			<td>(string, array) The string or strings you'd like to type. Define a single string within quotes or define multiple with an array. 
+			<td>(string, array) The string or strings you'd like to type. Define a single string within quotes or define multiple with an array.
 			<span class="code">
 				strings: 'Hello! This is my string.'
 			</span>
@@ -60,9 +60,15 @@
 
 	    <tr>
 			<td>breakDelay</td>
-			<td>(number) The amount of time (milliseconds) between typing multiple strings.</td>
+			<td>(number) The amount of time (milliseconds) between line breaks when typing multiple strings. <strong>Only effective when <span class="code inline">breakLines</span> is set to <span class="code inline">true</span>.</strong></td>
 			<td>750</td>
 	    </tr>
+
+      <tr>
+      <td>deleteDelay</td>
+      <td>(number) The amount of time (milliseconds) between deleting the current string and continuing to type additional strings. <strong>Only effective when <span class="code inline">breakLines</span> is set to <span class="code inline">false</span>.</strong></td>
+      <td>750</td>
+      </tr>
 
 	    <tr>
 			<td>startDelay</td>
@@ -75,7 +81,7 @@
 			<td>If <span class="code inline">true</span>, strings within the element upon initialization will first be deleted before typing any strings that are defined via JSON. <strong>Requires that a string or strings are defined within the HTML element before initalizing.</strong> Additionally, if you don't define more strings via JSON or by using companion functions, no further typing will take place after these strings are deleted.
 			<br>
 			<br>
-			
+
 			<span class="code">
 				&lt;span id="element"&gt;This will first be deleted...&lt;/span&gt;
 				<br>
@@ -116,7 +122,7 @@
 	   	<tr>
 			<td>callback</td>
 			<td>
-			A function that executes after your typing has completed. Must be passed as a function. Example: 
+			A function that executes after your typing has completed. Must be passed as a function. Example:
 
 			<span class="code">
 				// BAD :(<br>

@@ -1,7 +1,8 @@
 title: TypeIt. The Most Versatile jQuery Animated Typing Plugin on the Planet.
 email: alex@macarthur.me
 description: TypeIt is the most versatile jQuery animated typing plugin on the planet.
-baseurl: "" 
+version: 4.3.0
+baseurl: ""
 url: "http://macarthur.me/typeit"
 twitter_username: amacarthur89
 github_username:  alexmacarthur
