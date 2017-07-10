@@ -28,6 +28,14 @@
     });
   };
 
+$.fn.retypeIt = function() {
+	return this.each(function() {
+		var $t = $(this);
+		var tData = $t.data('typeit');
+		$t.data('typeit')._startQueue();
+	});
+};
+
   $.typeIt = function(el, opt) {
     this.d = {
       strings: [],
